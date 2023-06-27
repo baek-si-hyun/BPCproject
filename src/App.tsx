@@ -8,6 +8,9 @@ import DataDetail from "./pages/coin_detail/DataDetail";
 import Header from "./components/Header";
 import { darkTheme, lightTheme } from "./theme";
 import { useSelector } from "react-redux";
+import Member from "./pages/member/Member";
+import Login from "./pages/member/Login";
+import Join from "./pages/member/Join";
 
 const AppContainer = styled.div`
   background-color: ${(props) => props.theme.bgColor};
@@ -38,13 +41,11 @@ time, mark, audio, video {
   font: inherit;
   vertical-align: baseline;  
 }
-
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
 footer, header, hgroup, menu, nav, section {
   display: block;
 }
-
 html{
   font-size: 100%;
   scroll-behavior: smooth;
@@ -56,6 +57,18 @@ body {
   padding: 0;
 	color: ${(props) => props.theme.textColor};
   width: 100%;
+}
+label{
+  color : ${(props) => props.theme.labelColor}
+}
+input{
+  background-color: ${(props) => props.theme.cardColor};
+  border: 1px solid ${(props) => props.theme.inputBdColor};
+  color: ${(props) => props.theme.inputTextColor}
+}
+button{
+  background-color: ${(props) => props.theme.btnBgColor} ;
+  color: ${(props) => props.theme.btnTextColor}
 }
 ol, ul {
   list-style: none;
@@ -91,13 +104,18 @@ function App() {
       <GlobalStyle />
       <AppContainer>
         <AppInner>
-          <Header />
           <Routes>
-            <Route path="/coin-exchange" element={<CoinExchange />}></Route>
-            <Route path="/coin-map" element={<CoinMap />}></Route>
-            <Route path="/coin-detail" element={<CoinData />}></Route>
-            <Route path="/:coinId" element={<DataDetail />}></Route>
-            <Route path="/coin-comparison" element={<CoinComparison />}></Route>
+            <Route path="/" element={<Header />}>
+              <Route path="/" element={<CoinExchange />} />
+              <Route path="/coin-map" element={<CoinMap />} />
+              <Route path="/coin-detail" element={<CoinData />} />
+              <Route path="/:coinId" element={<DataDetail />} />
+              <Route path="/coin-comparison" element={<CoinComparison />} />
+            </Route>
+            <Route path="/member" element={<Member />}>
+              <Route path="login" element={<Login />}></Route>
+              <Route path="join" element={<Join />}></Route>
+            </Route>
           </Routes>
         </AppInner>
       </AppContainer>

@@ -1,5 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link } from "react-router-dom";
+import { Link, Outlet } from "react-router-dom";
 import styled from "styled-components";
 import { toggle } from "../toggleModeSlice";
 
@@ -62,56 +62,59 @@ function Header() {
     dispatch(toggle());
   };
   return (
-    <HeaderContainer>
-      <Logo>
-        <Link to="/coin-exchange">VisualCoin</Link>
-      </Logo>
-      <NavBar>
-        <NavUl>
-          <NavItem>
-            <NavLink to="/coin-exchange">코인 거래소</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/coin-map">코인 맵</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/coin-detail">코인 상세</NavLink>
-          </NavItem>
-          <NavItem>
-            <NavLink to="/coin-comparison">코인 비교</NavLink>
-          </NavItem>
-        </NavUl>
-      </NavBar>
-      <OptionBar>
-        <OptionUl>
-          <OptionItem>
-            <OptionLink to="/login">
-              <span>로그인</span>
-            </OptionLink>
-          </OptionItem>
-          <OptionItem>
-            <ToggleModeBTN onClick={() => handleToggle()}>
-              {isDarkMode ? (
+    <>
+      <HeaderContainer>
+        <Logo>
+          <Link to="/">VisualCoin</Link>
+        </Logo>
+        <NavBar>
+          <NavUl>
+            <NavItem>
+              <NavLink to="/">코인 거래소</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/coin-map">코인 맵</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/coin-detail">코인 상세</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink to="/coin-comparison">코인 비교</NavLink>
+            </NavItem>
+          </NavUl>
+        </NavBar>
+        <OptionBar>
+          <OptionUl>
+            <OptionItem>
+              <OptionLink to="/member">
+                <span>로그인</span>
+              </OptionLink>
+            </OptionItem>
+            <OptionItem>
+              <ToggleModeBTN onClick={() => handleToggle()}>
+                {isDarkMode ? (
+                  <MaterialIcon className="material-symbols-outlined">
+                    dark_mode
+                  </MaterialIcon>
+                ) : (
+                  <MaterialIcon className="material-symbols-outlined">
+                    light_mode
+                  </MaterialIcon>
+                )}
+              </ToggleModeBTN>
+            </OptionItem>
+            <OptionItem>
+              <OptionLink to="/my-page">
                 <MaterialIcon className="material-symbols-outlined">
-                  dark_mode
+                  account_circle
                 </MaterialIcon>
-              ) : (
-                <MaterialIcon className="material-symbols-outlined">
-                  light_mode
-                </MaterialIcon>
-              )}
-            </ToggleModeBTN>
-          </OptionItem>
-          <OptionItem>
-            <OptionLink to="/my-page">
-              <MaterialIcon className="material-symbols-outlined">
-                account_circle
-              </MaterialIcon>
-            </OptionLink>
-          </OptionItem>
-        </OptionUl>
-      </OptionBar>
-    </HeaderContainer>
+              </OptionLink>
+            </OptionItem>
+          </OptionUl>
+        </OptionBar>
+      </HeaderContainer>
+      <Outlet />
+    </>
   );
 }
 
