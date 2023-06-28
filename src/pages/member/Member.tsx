@@ -32,10 +32,12 @@ const ActiveBox = styled.div<{ isActive: boolean }>`
   border-bottom: 2px solid ${(props) => props.theme.memberActiveBoxBgColor};
   transform: translateX(${(props) => (props.isActive ? "0" : "100%")});
   transition: transform 0.2s ease-in-out;
+  /* box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); */
 `;
 const Tab = styled.div<{ isActive: boolean }>`
   text-align: center;
   display: flex;
+  padding: 1rem 0;
   border-bottom: 2px solid ${(props) => props.theme.memberTabBdColor};
   color: ${(props) =>
     props.isActive ? props.theme.textColor : props.theme.memberTabTextColor};
@@ -44,7 +46,6 @@ const Tab = styled.div<{ isActive: boolean }>`
 
 const TabLink = styled(Link)`
   flex: 1;
-  padding: 1rem 0;
   font-size: 1.2rem;
 `;
 
@@ -59,17 +60,15 @@ function Member() {
     <MemberContainer>
       <MemberInner>
         <Logo>
-          <span>
-            Visual<span>Coin</span>
-          </span>
+          <Link to="/">VisualCoin</Link>
         </Logo>
         <Tabs>
           <ActiveBox isActive={loginMatch !== null} />
           <Tab isActive={loginMatch !== null}>
-            <TabLink to="/member/login">login</TabLink>
+            <TabLink to="/member/login">Login</TabLink>
           </Tab>
           <Tab isActive={joinMatch !== null}>
-            <TabLink to="/member/join">join</TabLink>
+            <TabLink to="/member/join">Join</TabLink>
           </Tab>
         </Tabs>
         <Outlet />

@@ -12,8 +12,9 @@ declare module "styled-components" {
     inputFocusBdColor: string;
     btnBgColor: string;
     btnTextColor: string;
+    btnHoberBgColor: string;
     memberActiveBoxBgColor: string;
     memberTabTextColor: string;
-    memberTabBdColor: string,
+    memberTabBdColor: string;
   }
 }

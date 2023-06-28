@@ -1,7 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
-import { Link, Outlet } from "react-router-dom";
+import { Link, Outlet, useLocation } from "react-router-dom";
 import styled from "styled-components";
 import { toggle } from "../toggleModeSlice";
+import SelectBar from "./SelectBar/SelectBar";
 
 const HeaderContainer = styled.div`
   background-color: ${(props) => props.theme.bgColor};
@@ -53,6 +54,7 @@ const MaterialIcon = styled.span`
   color: ${(props) => props.theme.textColor};
 `;
 function Header() {
+  const { pathname } = useLocation();
   const isDarkMode = useSelector(
     (state: { toggleMode: boolean }) => state.toggleMode
   );
@@ -104,7 +106,7 @@ function Header() {
               </ToggleModeBTN>
             </OptionItem>
             <OptionItem>
-              <OptionLink to="/my-page">
+              <OptionLink to="/mypage">
                 <MaterialIcon className="material-symbols-outlined">
                   account_circle
                 </MaterialIcon>
@@ -113,6 +115,7 @@ function Header() {
           </OptionUl>
         </OptionBar>
       </HeaderContainer>
+      {(pathname === "/" || pathname === "/coin-detail") && <SelectBar />}
       <Outlet />
     </>
   );

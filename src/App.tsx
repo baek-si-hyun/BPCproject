@@ -11,16 +11,8 @@ import { useSelector } from "react-redux";
 import Member from "./pages/member/Member";
 import Login from "./pages/member/Login";
 import Join from "./pages/member/Join";
+import Mypage from "./pages/mypage/MyPage";
 
-const AppContainer = styled.div`
-  background-color: ${(props) => props.theme.bgColor};
-  display: flex;
-  justify-content: center;
-  padding: 0 3vw;
-`;
-const AppInner = styled.div`
-  width: 100%;
-`;
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -39,7 +31,7 @@ time, mark, audio, video {
   padding: 0;
   border: 0;
   font: inherit;
-  vertical-align: baseline;  
+  vertical-align: baseline; 
 }
 /* HTML5 display-role reset for older browsers */
 article, aside, details, figcaption, figure, 
@@ -48,9 +40,9 @@ footer, header, hgroup, menu, nav, section {
 }
 html{
   font-size: 100%;
-  scroll-behavior: smooth;
+  scroll-behavior: smooth; 
 }
-body {
+body {   
   line-height: 1;
   font-family: "Pretendard",sans-serif;
   background-color: ${(props) => props.theme.bgColor};
@@ -59,16 +51,21 @@ body {
   width: 100%;
 }
 label{
-  color : ${(props) => props.theme.labelColor}
+  color : ${(props) => props.theme.labelColor};
 }
 input{
   background-color: ${(props) => props.theme.cardColor};
   border: 1px solid ${(props) => props.theme.inputBdColor};
-  color: ${(props) => props.theme.inputTextColor}
+  color: ${(props) => props.theme.inputTextColor};
 }
-button{
-  background-color: ${(props) => props.theme.btnBgColor} ;
-  color: ${(props) => props.theme.btnTextColor}
+select, button{  
+  font-family: "Pretendard",sans-serif;
+  background-color: ${(props) => props.theme.btnBgColor};
+  color: ${(props) => props.theme.textColor};
+  border:none;
+}
+option {
+  font-family: "Pretendard",sans-serif;
 }
 ol, ul {
   list-style: none;
@@ -94,11 +91,21 @@ a {
   -webkit-font-smoothing: antialiased;
 }
 `;
+const AppContainer = styled.div`
+  background-color: ${(props) => props.theme.bgColor};
+  display: flex;
+  justify-content: center;
+  padding: 0 3vw;
+  position: relative;
+`;
+const AppInner = styled.div`
+  width: 100%;
+`;
+
 function App() {
   const isDarkMode = useSelector(
     (state: { toggleMode: boolean }) => state.toggleMode
   );
-  console.log(isDarkMode);
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GlobalStyle />
@@ -116,6 +123,7 @@ function App() {
               <Route path="login" element={<Login />}></Route>
               <Route path="join" element={<Join />}></Route>
             </Route>
+            <Route path="/mypage" element={<Mypage />} />
           </Routes>
         </AppInner>
       </AppContainer>

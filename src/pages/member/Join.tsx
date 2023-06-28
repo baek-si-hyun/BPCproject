@@ -46,7 +46,6 @@ const VisibilityIconBtn = styled.button`
 `;
 
 const JoinButton = styled.button`
-  font-family: "Pretendard", sans-serif;
   font-size: 1.5rem;
   border-radius: 5px;
   height: 3.7rem;
@@ -54,7 +53,9 @@ const JoinButton = styled.button`
   outline: none;
   border: none;
   cursor: pointer;
-  transition: opacity 0.3s ease-in-out;
+  color: ${(props) => props.theme.btnTextColor};
+  /* box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); */
+  transition: opacity 0.2s ease-in-out;
   &:hover {
     opacity: 0.6;
   }

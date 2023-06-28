@@ -1,109 +1,139 @@
+export const optionCategory  = [
+  { value: "platform", label: "플랫폼" },
+  { value: "game market", label: "게임시장" },
+  { value: "authentication service", label: "인증 서비스" },
+  { value: "data storage service", label: "데이터저장 서비스" },
+  { value: "Computing Power Rental Service", label: "연산력 임대 서비스" },
+  { value: "decentralized exchange", label: "분산화거래소" },
+  { value: "social networking", label: "소셜네트워킹" },
+  { value: "SNS content", label: "SNS 컨텐츠" },
+  { value: "advertising industry", label: "광고산업" },
+  { value: "Content production and mediation", label: "컨텐츠 생산 및 중개" },
+  { value: "Simple payment platform", label: "간편결제 플랫폼" },
+  { value: "bitcoin group", label: "비트코인 그룹" },
+  { value: "Ethereum group", label: "이더리움 그룹" },
+  { value: "DeFi Index", label: "디파이 인덱스" },
+  { value: "Non-Fungible Token", label: "대체불가능 토큰" },
+  { value: "oracle", label: "오라클" },
+  { value: "iot", label: "아이오티" },
+  { value: "smart contract", label: "스마트컨트랙" },
+];
+export const optionExchange = [
+  { value: "Binance", label: "Binance" },
+  { value: "BinanceUS", label: "BinanceUS" },
+  { value: "OKX", label: "OKX" },
+  { value: "UpBit", label: "UpBit" },
+  { value: "Bitget", label: "Bitget" },
+  { value: "Bithumb", label: "Bithumb" },
+  { value: "Uniswap", label: "Uniswap" },
+  { value: "OKCoin", label: "OKCoin" },
+];
+
 export const mapdata = {
-  name: 'Celtics',
+  name: "Celtics",
   children: [
     {
-      name: 'Guards',
+      name: "Guards",
       children: [
         {
-          category: 'Guards',
-          name: 'Kemba Walker',
+          category: "Guards",
+          name: "Kemba Walker",
           value: 20.4,
         },
         {
-          category: 'Guards',
-          name: 'Marcus Smart',
+          category: "Guards",
+          name: "Marcus Smart",
           value: 12.9,
         },
         {
-          category: 'Guards',
-          name: 'Brad Wanamaker',
+          category: "Guards",
+          name: "Brad Wanamaker",
           value: 6.9,
         },
         {
-          category: 'Guards',
-          name: 'Tremont Waters',
+          category: "Guards",
+          name: "Tremont Waters",
           value: 3.6,
         },
         {
-          category: 'Guards',
-          name: 'Carsen Edwards',
+          category: "Guards",
+          name: "Carsen Edwards",
           value: 3.3,
         },
         {
-          category: 'Guards',
-          name: 'Romeo Langford',
+          category: "Guards",
+          name: "Romeo Langford",
           value: 2.5,
         },
       ],
     },
     {
-      name: 'Forwards',
+      name: "Forwards",
       children: [
         {
-          category: 'Forwards',
-          name: 'Jayson Tatum',
+          category: "Forwards",
+          name: "Jayson Tatum",
           value: 23.4,
         },
         {
-          category: 'Forwards',
-          name: 'Jaylen Brown',
+          category: "Forwards",
+          name: "Jaylen Brown",
           value: 20.3,
         },
         {
-          category: 'Forwards',
-          name: 'Gordon Hayward',
+          category: "Forwards",
+          name: "Gordon Hayward",
           value: 17.5,
         },
         {
-          category: 'Forwards',
-          name: 'Grant Williams',
+          category: "Forwards",
+          name: "Grant Williams",
           value: 3.4,
         },
         {
-          category: 'Forwards',
-          name: 'Javonte Green',
+          category: "Forwards",
+          name: "Javonte Green",
           value: 3.4,
         },
         {
-          category: 'Forwards',
-          name: 'Semi Ojeleye',
+          category: "Forwards",
+          name: "Semi Ojeleye",
           value: 3.4,
         },
         {
-          category: 'Forwards',
-          name: 'Vincent Poirier',
+          category: "Forwards",
+          name: "Vincent Poirier",
           value: 1.9,
         },
       ],
     },
     {
-      name: 'Centers',
+      name: "Centers",
       children: [
         {
-          category: 'Centers',
-          name: 'Daniel Theis',
+          category: "Centers",
+          name: "Daniel Theis",
           value: 9.2,
         },
         {
-          category: 'Centers',
-          name: 'Enes Kanter',
+          category: "Centers",
+          name: "Enes Kanter",
           value: 8.1,
         },
         {
-          category: 'Centers',
-          name: 'Robert Williams III',
+          category: "Centers",
+          name: "Robert Williams III",
           value: 5.2,
         },
         {
-          category: 'Centers',
-          name: 'Tacko Fall',
+          category: "Centers",
+          name: "Tacko Fall",
           value: 3.3,
         },
       ],
     },
   ],
 };
-
 
 export const chartdata = [
   { open: 10, high: 10.63, low: 9.49, close: 9.55, time: 1642427876 },

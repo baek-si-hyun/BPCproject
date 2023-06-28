@@ -4,7 +4,9 @@ import { fetchCoins } from "../../datalist";
 import { ICoin } from "../../interface/iCoinList";
 import { Link } from "react-router-dom";
 
-const CoinDataContainer = styled.div``;
+const CoinDataContainer = styled.div`
+  margin-top: 0.5rem;
+`;
 
 const CoinDataInner = styled.header`
   display: flex;

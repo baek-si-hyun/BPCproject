@@ -29,14 +29,15 @@ const LoginInput = styled.input`
 `;
 
 const LoginButton = styled.button`
-  font-family: "Pretendard", sans-serif;
   font-size: 1.5rem;
   border-radius: 5px;
   height: 3.7rem;
   margin: 2rem 0 5rem 0;
   outline: none;
   border: none;
-  transition: opacity 0.3s ease-in-out;
+  cursor: pointer;
+  color: ${(props) => props.theme.btnTextColor};
+  transition: opacity 0.2s ease-in-out;
   &:hover {
     opacity: 0.6;
   }
