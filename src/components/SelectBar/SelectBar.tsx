@@ -1,6 +1,7 @@
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 import SelectExchange from "./SelectExchange";
+import SelectCoinDetail from "./SelectCoinDetail";
 
 const SelectBarContainer = styled.div`
   padding: 0.5rem 0.5rem 0.5rem 0;
@@ -12,7 +13,8 @@ function SelectBar() {
   return (
     <SelectBarContainer>
       <SelectBarInner>
-        {pathname === "/coin-detail" && <SelectExchange />}
+        {pathname === "/" && <SelectExchange />}
+        {pathname === "/coin-detail" && <SelectCoinDetail />}
       </SelectBarInner>
     </SelectBarContainer>
   );

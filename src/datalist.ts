@@ -1,4 +1,25 @@
-export const optionCategory  = [
+export const optionCoins = [
+  { value: "Bitcoin", label: "Bitcoin" },
+  { value: "Ethereum", label: "Ethereum" },
+  { value: "Tether", label: "Tether" },
+  { value: "BNB", label: "BNB" },
+  { value: "USD Coin", label: "USD Coin" },
+  { value: "XRP", label: "XRP" },
+  { value: "Cardano", label: "Cardano" },
+  { value: "Dogecoin", label: "Dogecoin" },
+];
+export const optionTimer = [
+  { value: "1분", label: "1분" },
+  { value: "3분", label: "3분" },
+  { value: "5분", label: "5분" },
+  { value: "15분", label: "15분" },
+  { value: "30분", label: "30분" },
+  { value: "1시간", label: "1시간" },
+  { value: "4시간", label: "4시간" },
+  { value: "24시간", label: "24시간" },
+];
+export const optionCategory = [
+  { value: "Category", label: "카테고리" },
   { value: "platform", label: "플랫폼" },
   { value: "game market", label: "게임시장" },
   { value: "authentication service", label: "인증 서비스" },
