@@ -1,13 +1,10 @@
 import { SelectWrapperUl, SelectWrapperLi } from "./common/commonItem";
 import FilterExchange from "./common/FilterExchange";
 import FilterCategory from "./common/FilterCategory";
-import FilterSubscription from "./common/FilterSubscription";
-import FilterName from "./common/FliterName";
-import FilterPrice from "./common/FilterPrice";
 import FilterMarketCap from "./common/FilterMarketCap";
 import FilterChange from "./common/FilterChange";
 
-function SelectExchange() {
+function SelectMyPageInvest() {
   return (
     <SelectWrapperUl>
       <SelectWrapperLi>
@@ -17,16 +14,7 @@ function SelectExchange() {
         <FilterCategory />
       </SelectWrapperLi>
       <SelectWrapperLi>
-        <FilterSubscription />
-      </SelectWrapperLi>
-      <SelectWrapperLi>
         <FilterChange />
-      </SelectWrapperLi>
-      <SelectWrapperLi>
-        <FilterName />
-      </SelectWrapperLi>
-      <SelectWrapperLi>
-        <FilterPrice />
       </SelectWrapperLi>
       <SelectWrapperLi>
         <FilterMarketCap />
@@ -35,4 +23,4 @@ function SelectExchange() {
   );
 }
 
-export default SelectExchange;
+export default SelectMyPageInvest;

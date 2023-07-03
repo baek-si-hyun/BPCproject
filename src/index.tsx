@@ -1,5 +1,4 @@
 import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { Provider } from "react-redux";
 import "./assets/font/css/font.css";
@@ -12,12 +11,11 @@ const root = ReactDOM.createRoot(
 );
 const queryClient = new QueryClient();
 root.render(
-  <BrowserRouter basename={process.env.PUBLIC_URL}>
     <QueryClientProvider client={queryClient}>
       <Provider store={store}>
         <App />
         <ReactQueryDevtools />
       </Provider>
     </QueryClientProvider>
-  </BrowserRouter>
+
 );

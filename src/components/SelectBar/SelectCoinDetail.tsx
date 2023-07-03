@@ -1,110 +1,32 @@
-import { useState } from "react";
-import { optionCategory, optionExchange } from "../../datalist";
-import {
-  Select,
-  SelectWrapperUl,
-  SelectWrapperLi,
-  Option,
-  SelectBtn,
-} from "./commonStyled";
-import styled from "styled-components";
+import { SelectWrapperLi, SelectWrapperUl } from "./common/commonItem";
+import FilterExchange from "./common/FilterExchange";
+import FilterCategory from "./common/FilterCategory";
+import FilterSubscription from "./common/FilterSubscription";
+import FilterName from "./common/FliterName";
+import FilterPrice from "./common/FilterPrice";
+import FilterMarketCap from "./common/FilterMarketCap";
 
-const FilterBtn = styled(SelectBtn)<{ filterNum: number }>`
-  background-color: ${(props) =>
-    props.filterNum !== 0 && props.theme.btnBgColor};
-  color: ${(props) => props.filterNum !== 0 && props.theme.btnTextColor};
-`;
-const MaterialIcon = styled.span`
-  font-size: 16px;
-  vertical-align: bottom;
-`;
-const renderFilterButton = (
-  label: string,
-  filter: number,
-  handleToggleFn: { (): void }
-) => {
-  return (
-    <SelectWrapperLi>
-      <FilterBtn onClick={() => handleToggleFn()} filterNum={filter}>
-        <span>{label}</span>
-        {filter === 1 ? (
-          <MaterialIcon className="material-symbols-outlined">
-            arrow_drop_down
-          </MaterialIcon>
-        ) : filter === 2 ? (
-          <MaterialIcon className="material-symbols-outlined">
-            arrow_drop_up
-          </MaterialIcon>
-        ) : (
-          <></>
-        )}
-      </FilterBtn>
-    </SelectWrapperLi>
-  );
-};
 function SelectCoinDetail() {
-  const [subscriptionListFilter, setSubscriptionListFilter] = useState(0);
-  const [nameFilter, setNameFilter] = useState(0);
-  const [priceFilter, setPriceFilter] = useState(0);
-  const [changeFilter, setChangeFilter] = useState(0);
-  const [marketcapFilter, setMarketcapFilter] = useState(0);
-
-  const handleToggleSubscriptionFilter = () => {
-    setSubscriptionListFilter((choices) => (choices === 1 ? 0 : choices + 1));
-  };
-  const handleToggleNameFilter = () => {
-    setNameFilter((choices) => (choices === 2 ? 0 : choices + 1));
-  };
-  const handleTogglePriceFilter = () => {
-    setPriceFilter((choices) => (choices === 2 ? 0 : choices + 1));
-  };
-  const handleToggleChangeFilter = () => {
-    setChangeFilter((choices) => (choices === 2 ? 0 : choices + 1));
-  };
-  const handleTogglemMarketcapFilter = () => {
-    setMarketcapFilter((choices) => (choices === 2 ? 0 : choices + 1));
-  };
-
   return (
     <SelectWrapperUl>
       <SelectWrapperLi>
-        <Select defaultValue={optionCategory[0].value}>
-          {optionCategory.map((list) => (
-            <Option key={list.value} value={list.label}>
-              {list.label}
-            </Option>
-          ))}
-        </Select>
+        <FilterExchange />
       </SelectWrapperLi>
       <SelectWrapperLi>
-        <Select defaultValue={optionExchange[0].value}>
-          {optionExchange.map((list) => (
-            <Option key={list.value} value={list.label}>
-              {list.label}
-            </Option>
-          ))}
-        </Select>
+        <FilterCategory />
       </SelectWrapperLi>
       <SelectWrapperLi>
-        <FilterBtn
-          onClick={() => handleToggleSubscriptionFilter()}
-          filterNum={subscriptionListFilter}
-        >
-          <span>subscription List</span>
-        </FilterBtn>
+        <FilterSubscription />
       </SelectWrapperLi>
-      {renderFilterButton("name", nameFilter, handleToggleNameFilter)}
-      {renderFilterButton("price", priceFilter, handleTogglePriceFilter)}
-      {renderFilterButton(
-        "amount of change",
-        changeFilter,
-        handleToggleChangeFilter
-      )}
-      {renderFilterButton(
-        "market cap",
-        marketcapFilter,
-        handleTogglemMarketcapFilter
-      )}
+      <SelectWrapperLi>
+        <FilterName />
+      </SelectWrapperLi>
+      <SelectWrapperLi>
+        <FilterPrice />
+      </SelectWrapperLi>
+      <SelectWrapperLi>
+        <FilterMarketCap />
+      </SelectWrapperLi>
     </SelectWrapperUl>
   );
 }

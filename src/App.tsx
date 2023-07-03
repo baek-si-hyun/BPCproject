@@ -1,17 +1,9 @@
-import { Route, Routes } from "react-router-dom";
-import CoinExchange from "./pages/coin_exchange/CoinExchange";
 import styled, { ThemeProvider, createGlobalStyle } from "styled-components";
-import CoinData from "./pages/coin_detail/CoinData";
-import CoinMap from "./pages/coin_map/CoinMap";
-import CoinComparison from "./pages/coin_comparison/CoinComparison";
-import DataDetail from "./pages/coin_detail/DataDetail";
-import Header from "./components/Header";
 import { darkTheme, lightTheme } from "./theme";
-import { useSelector } from "react-redux";
-import Member from "./pages/member/Member";
-import Login from "./pages/member/Login";
-import Join from "./pages/member/Join";
-import Mypage from "./pages/mypage/MyPage";
+import { useDispatch, useSelector } from "react-redux";
+import Router from "./Router";
+import { useRef, useLayoutEffect, useEffect } from "react";
+import { width } from "./viewWidthSlice";
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -106,25 +98,33 @@ function App() {
   const isDarkMode = useSelector(
     (state: { toggleMode: boolean }) => state.toggleMode
   );
+  const appRef = useRef<HTMLDivElement>(null);
+  const dispatch = useDispatch();
+
+  useLayoutEffect(() => {
+    if (appRef.current) {
+      dispatch(width(appRef.current.offsetWidth));
+    }
+  }, []);
+
+  useEffect(() => {
+    const handleResize = () => {
+      if (appRef.current) {
+        dispatch(width(appRef.current.offsetWidth));
+      }
+    };
+    window.addEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
+  }, [appRef, dispatch]);
+
   return (
     <ThemeProvider theme={isDarkMode ? darkTheme : lightTheme}>
       <GlobalStyle />
       <AppContainer>
-        <AppInner>
-          <Routes>
-            <Route path="/" element={<Header />}>
-              <Route path="/" element={<CoinExchange />} />
-              <Route path="/coin-map" element={<CoinMap />} />
-              <Route path="/coin-detail" element={<CoinData />} />
-              <Route path="/:coinId" element={<DataDetail />} />
-              <Route path="/coin-comparison" element={<CoinComparison />} />
-            </Route>
-            <Route path="/member" element={<Member />}>
-              <Route path="login" element={<Login />}></Route>
-              <Route path="join" element={<Join />}></Route>
-            </Route>
-            <Route path="/mypage" element={<Mypage />} />
-          </Routes>
+        <AppInner ref={appRef}>
+          <Router />
         </AppInner>
       </AppContainer>
     </ThemeProvider>

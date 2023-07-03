@@ -18,7 +18,7 @@ const JoinInput = styled.input`
   font-size: 1.1rem;
   border-radius: 5px;
   outline: none;
-  transition: border 0.3s ease-in-out, background-color 0.3s ease-in-out;
+  transition: border 0.3s ease-in-out;
   &:focus {
     border: 1px solid ${(props) => props.theme.inputFocusBdColor};
   }

@@ -7,6 +7,7 @@ const ChartComponent = (props: IChartData) => {
   const isDarkMode = useSelector(
     (state: { toggleMode: boolean }) => state.toggleMode
   );
+
   const { data } = props.chartData;
 
   const chartContainerRef = useRef<HTMLDivElement>(null);
