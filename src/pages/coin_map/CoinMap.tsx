@@ -1,7 +1,9 @@
 import { TreeMap, TreeMapSeries, TreeMapRect, TreeMapLabel } from "reaviz";
-import { mapdata } from "../../datalist";
+import { mapsData } from "../../datalist";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import { navCoinDetail, navMapDetail } from "./common/navigateFn";
 
 const CoinMapContainer = styled.div``;
 const CoinMapInner = styled.div``;
@@ -10,13 +12,15 @@ function CoinMap() {
   const viewWidth = useSelector(
     (state: { viewWidth: number }) => state.viewWidth
   );
+  const navigate = useNavigate();
+
   return (
     <CoinMapContainer>
       <CoinMapInner>
         <TreeMap
-          width={viewWidth}
+          width={viewWidth - 16}
           height={viewWidth * 0.7}
-          data={mapdata}
+          data={mapsData}
           series={
             <TreeMapSeries
               label={
@@ -30,15 +34,20 @@ function CoinMap() {
               rect={
                 <TreeMapRect
                   tooltip={<></>}
+                  animated={false}
                   onMouseEnter={(event, data) => {
-                    console.log("onMouseEnter", event, data);
+                    // console.log("onMouseEnter", event, data);
                   }}
                   onMouseLeave={(event, data) => {
-                    console.log("onMouseLeave", event, data);
+                    // console.log("onMouseLeave", event, data);
                   }}
                   onClick={(event, data) => {
-                    console.log("onClick", event, data);
-                    alert(`Clicked ${data.data.key}`);
+                    if (data.depth === 1) {
+                      navMapDetail(data, navigate);
+                    }
+                    if (data.depth === 2) {
+                      navCoinDetail(data, navigate);
+                    }
                   }}
                 />
               }

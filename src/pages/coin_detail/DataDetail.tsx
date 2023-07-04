@@ -2,6 +2,7 @@
 import styled from "styled-components";
 import { useEffect, useRef } from "react";
 import { useSelector } from "react-redux";
+import { useLocation } from "react-router-dom";
 
 const DataDetailContainer = styled.div``;
 const DataDetailInner = styled.div`
@@ -12,7 +13,7 @@ function DataDetail() {
   const isDarkMode = useSelector(
     (state: { toggleMode: boolean }) => state.toggleMode
   );
-
+  const { pathname } = useLocation();
   let tvScriptLoadingPromise: Promise<void>;
   const onLoadScriptRef = useRef<(() => void) | null>();
 
@@ -47,7 +48,7 @@ function DataDetail() {
     ) {
       new window.TradingView.widget({
         autosize: true,
-        symbol: "BINANCE:BTCUSDT",
+        symbol: pathname.slice(13),
         interval: "D",
         timezone: "Asia/Seoul",
         theme: isDarkMode ? "dark" : "light",

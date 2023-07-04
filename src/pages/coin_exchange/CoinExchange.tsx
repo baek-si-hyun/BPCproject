@@ -4,7 +4,6 @@ import { exchangeChartData, fetchExchangeChart } from "../../datalist";
 import { useQuery } from "@tanstack/react-query";
 import { IExchangeChart } from "../../interface/iExchangeChart";
 
-
 const CoinExchangeContainer = styled.div``;
 const CoinExchangeInner = styled.div`
   display: grid;

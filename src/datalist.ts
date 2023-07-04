@@ -171,34 +171,38 @@ export const optionExchange = [
   { value: "Uniswap", label: "Uniswap" },
   { value: "OKCoin", label: "OKCoin" },
 ];
-export const mapdata = [
+export const mapsData = [
   {
-    key: 'Windows',
+    key: "BINANCE",
     data: [
-      { key: 'WinXP', data: 15 },
-      { key: 'Win10', data: 20 },
-      { key: 'Win7', data: 50 },
-      { key: 'WinVista', data: 10 },
-      { key: 'Win98', data: 5 }
-    ]
+      { key: "Bitcoin", data: 100, symbol: "BTC", unit: "USDT" },
+      { key: "Ethereum", data: 20, symbol: "ETH", unit: "USDT" },
+      { key: "Tether", data: 10, symbol: "USDT", unit: "USDT" },
+      { key: "BNB", data: 5, symbol: "BNB", unit: "USDT" },
+      { key: "XRP", data: 2, symbol: "XRP", unit: "USDT" },
+    ],
   },
   {
-    key: 'MacOS',
+    key: "UPBIT",
     data: [
-      { key: 'Sierra', data: 20 },
-      { key: 'Catalina', data: 30 },
-      { key: 'BigSur', data: 40 },
-      { key: 'Ventura', data: 60 }
-    ]
+      { key: "Bitcoin", data: 100, symbol: "BTC", unit: "KRW" },
+      { key: "Solana", data: 70, symbol: "SOL", unit: "KRW" },
+      { key: "Aave", data: 40, symbol: "AAVE", unit: "KRW" },
+      { key: "Bitcoin Cash", data: 20, symbol: "BCH", unit: "KRW" },
+    ],
   },
   {
-    key: 'Linux',
+    key: "OKX",
     data: [
-      { key: 'Ubuntu', data: 70 },
-      { key: 'Fedora', data: 60 },
-      { key: 'CentOS', data: 50 }
-    ]
-  }
+      { key: "Bitcoin", data: 100, symbol: "BTC", unit: "USDT" },
+      { key: "Ethereum", data: 70, symbol: "ETH", unit: "USDT" },
+      { key: "Filecoin", data: 40, symbol: "FIL", unit: "USDT" },
+      { key: "EOS", data: 20, symbol: "EOS", unit: "USDT" },
+      { key: "Cardano", data: 80, symbol: "ADA", unit: "USDT" },
+      { key: "Dogecoin", data: 60, symbol: "DOGE", unit: "USDT" },
+      { key: "Flow", data: 40, symbol: "FLOW", unit: "USDT" },
+    ],
+  },
 ];
 
 export const chartdata = [
