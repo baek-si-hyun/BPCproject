@@ -10,6 +10,7 @@ const MypageInner = styled.div`
 `;
 const ProfileBox = styled.div`
   background-color: ${(props) => props.theme.cardColor};
+  will-change: background-color;
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
   padding: 2rem;
   border-radius: 13px;
@@ -48,6 +49,7 @@ const UserEditBtn = styled.button`
   border: none;
   cursor: pointer;
   color: ${(props) => props.theme.btnTextColor};
+  will-change: color;
   transition: opacity 0.2s ease-in-out;
   &:hover {
     opacity: 0.6;
@@ -74,6 +76,7 @@ const TabLink = styled(Link)<{ isActive: boolean }>`
   background-color: ${(props) =>
     props.isActive ? props.theme.btnBgColor : props.theme.cardColor};
   color: ${(props) => props.isActive && props.theme.btnTextColor};
+  will-change: background-color, color;
   &:hover {
     background-color: ${(props) => props.theme.btnHoberBgColor};
   }

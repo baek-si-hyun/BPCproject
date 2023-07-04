@@ -23,6 +23,7 @@ function CoinMap() {
           data={mapsData}
           series={
             <TreeMapSeries
+              animated={false}
               label={
                 <TreeMapLabel
                   wrap={true}

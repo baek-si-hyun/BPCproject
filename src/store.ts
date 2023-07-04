@@ -1,6 +1,6 @@
 import { configureStore } from "@reduxjs/toolkit";
-import toggleModeSlice from "./toggleModeSlice";
-import viewWidthSlice from "./viewWidthSlice";
+import toggleModeSlice from "./redux/toggleModeSlice";
+import viewWidthSlice from "./redux/viewWidthSlice";
 
 const store = configureStore({
   reducer: {

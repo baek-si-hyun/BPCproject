@@ -19,6 +19,7 @@ export const Select = styled.select`
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
   color: ${(props) => props.theme.textColor};
   background-color: ${(props) => props.theme.cardColor};
+  will-change: background-color, color;
   &:focus {
     background-color: ${(props) => props.theme.btnBgColor};
     color: ${(props) => props.theme.btnTextColor};
@@ -42,6 +43,7 @@ export const FilterBtn = styled.button<{ filterNum: number }>`
   background-color: ${(props) =>
     props.filterNum === 0 ? props.theme.cardColor : props.theme.btnBgColor};
   color: ${(props) => props.filterNum !== 0 && props.theme.btnTextColor};
+  will-change: background-color, color;
   outline: none;
   border-radius: 6px;
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
@@ -61,19 +63,19 @@ export const renderFilterButton = (
   handleToggleFn: { (): void }
 ) => {
   return (
-      <FilterBtn onClick={() => handleToggleFn()} filterNum={filter}>
-        <span>{label}</span>
-        {filter === 1 ? (
-          <MaterialIcon className="material-symbols-outlined">
-            arrow_drop_down
-          </MaterialIcon>
-        ) : filter === 2 ? (
-          <MaterialIcon className="material-symbols-outlined">
-            arrow_drop_up
-          </MaterialIcon>
-        ) : (
-          <></>
-        )}
-      </FilterBtn>
+    <FilterBtn onClick={() => handleToggleFn()} filterNum={filter}>
+      <span>{label}</span>
+      {filter === 1 ? (
+        <MaterialIcon className="material-symbols-outlined">
+          arrow_drop_down
+        </MaterialIcon>
+      ) : filter === 2 ? (
+        <MaterialIcon className="material-symbols-outlined">
+          arrow_drop_up
+        </MaterialIcon>
+      ) : (
+        <></>
+      )}
+    </FilterBtn>
   );
 };

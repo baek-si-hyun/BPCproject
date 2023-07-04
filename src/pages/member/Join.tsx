@@ -1,32 +1,14 @@
 import { SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
+import {
+  MemberForm,
+  MemberInputLabel,
+  MemberInput,
+  MemberButton,
+} from "./common/commonItem";
 
-const JoinForm = styled.form`
-  display: flex;
-  flex-direction: column;
-`;
-const InputLabel = styled.label`
-  text-transform: uppercase;
-  margin-bottom: 0.4rem;
-  font-size: 0.9rem;
-`;
-const JoinInput = styled.input`
-  height: 48px;
-  padding: 0 0.5rem;
-  margin-bottom: 2rem;
-  font-size: 1.1rem;
-  border-radius: 5px;
-  outline: none;
-  transition: border 0.3s ease-in-out;
-  &:focus {
-    border: 1px solid ${(props) => props.theme.inputFocusBdColor};
-  }
-  &::placeholder {
-    color: #c0c0c0;
-  }
-`;
-const JoinPasswordInput = styled(JoinInput)`
+const JoinPasswordInput = styled(MemberInput)`
   margin-bottom: 0rem;
   width: 100%;
 `;
@@ -41,24 +23,9 @@ const VisibilityIconBtn = styled.button`
   background: none;
   border: none;
   color: ${(props) => props.theme.textColor};
+  will-change: color;
   transform: translate(0, -50%);
   cursor: pointer;
-`;
-
-const JoinButton = styled.button`
-  font-size: 1.5rem;
-  border-radius: 5px;
-  height: 3.7rem;
-  margin: 2rem 0 5rem 0;
-  outline: none;
-  border: none;
-  cursor: pointer;
-  color: ${(props) => props.theme.btnTextColor};
-  /* box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.5); */
-  transition: opacity 0.2s ease-in-out;
-  &:hover {
-    opacity: 0.6;
-  }
 `;
 
 function Join() {
@@ -101,22 +68,22 @@ function Join() {
     navigate("/member/login");
   };
   return (
-    <JoinForm onSubmit={handleLogin}>
-      <InputLabel>Email Address</InputLabel>
-      <JoinInput
+    <MemberForm onSubmit={handleLogin}>
+      <MemberInputLabel>Email Address</MemberInputLabel>
+      <MemberInput
         type="email"
         value={email}
         onChange={handleEmailChange}
         placeholder="Email Address"
       />
-      <InputLabel>Nick Name</InputLabel>
-      <JoinInput
+      <MemberInputLabel>Nick Name</MemberInputLabel>
+      <MemberInput
         type="text"
         value={nickName}
         onChange={handleNickNameChange}
         placeholder="Nick Name"
       />
-      <InputLabel>Password</InputLabel>
+      <MemberInputLabel>Password</MemberInputLabel>
       <JoinPassWordInputBox>
         <JoinPasswordInput
           type={showPassword ? "text" : "password"}
@@ -132,7 +99,7 @@ function Join() {
           )}
         </VisibilityIconBtn>
       </JoinPassWordInputBox>
-      <InputLabel>Password Check</InputLabel>
+      <MemberInputLabel>Password Check</MemberInputLabel>
       <JoinPassWordInputBox>
         <JoinPasswordInput
           type={showPasswordCheck ? "text" : "password"}
@@ -148,8 +115,8 @@ function Join() {
           )}
         </VisibilityIconBtn>
       </JoinPassWordInputBox>
-      <JoinButton type="submit">Join Us</JoinButton>
-    </JoinForm>
+      <MemberButton type="submit">Join Us</MemberButton>
+    </MemberForm>
   );
 }
 

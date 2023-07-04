@@ -3,7 +3,7 @@ import { darkTheme, lightTheme } from "./theme";
 import { useDispatch, useSelector } from "react-redux";
 import Router from "./Router";
 import { useRef, useLayoutEffect, useEffect } from "react";
-import { width } from "./viewWidthSlice";
+import { width } from "./redux/viewWidthSlice";
 
 const GlobalStyle = createGlobalStyle`
 html, body, div, span, applet, object, iframe,
@@ -41,20 +41,24 @@ body {
   padding: 0;
 	color: ${(props) => props.theme.textColor};
   width: 100%;
+  will-change: background-color, color;
 }
 label{
   color : ${(props) => props.theme.labelColor};
+  will-change: color;
 }
 input{
   background-color: ${(props) => props.theme.cardColor};
   border: 1px solid ${(props) => props.theme.inputBdColor};
   color: ${(props) => props.theme.inputTextColor};
+  will-change: background-color,border, color;
 }
 select, button{  
   font-family: "Pretendard",sans-serif;
   background-color: ${(props) => props.theme.btnBgColor};
   color: ${(props) => props.theme.textColor};
   border:none;
+  will-change: background-color, color;
 }
 option {
   font-family: "Pretendard",sans-serif;

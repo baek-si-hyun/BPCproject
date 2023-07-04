@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-import { toggle } from "../../toggleModeSlice";
+import { toggle } from "../../redux/toggleModeSlice";
 
 const OptionBarContainer = styled.div``;
 const OptionUl = styled.ul`
@@ -27,6 +27,7 @@ const ToggleModeBTN = styled.button`
 `;
 const MaterialIcon = styled.span`
   color: ${(props) => props.theme.textColor};
+  will-change: color;
 `;
 
 function OptionBar() {
@@ -38,7 +39,7 @@ function OptionBar() {
   const handleToggle = () => {
     dispatch(toggle());
   };
-  
+
   return (
     <OptionBarContainer>
       <OptionUl>
