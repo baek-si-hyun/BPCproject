@@ -2,12 +2,12 @@ import styled from "styled-components";
 import { IContentItemData } from "../../../interface/iMyPage";
 
 export const MypageContentContainer = styled.div``;
-export const MypageContentInner = styled.div`
+export const MypageContentInner = styled.ul`
   display: grid;
   grid-template-columns: repeat(5, 1fr);
   gap: 1rem;
 `;
-const MyContentItem = styled.div`
+export const MyContentItem = styled.li`
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -49,9 +49,15 @@ const MaterialIcons = styled.span`
   font-size: 1.5rem;
 `;
 
-export const CreateMyPageContentItem = (data: IContentItemData) => {
+export const CreateMyPageContentItem = ({
+  data,
+  index,
+}: {
+  data: IContentItemData;
+  index: number;
+}): JSX.Element => {
   return (
-    <MyContentItem>
+    <MyContentItem key={index}>
       <ItemTop>
         <Exchange>{data.exchange}</Exchange>
         <Coin>{data.coin}</Coin>
@@ -62,15 +68,24 @@ export const CreateMyPageContentItem = (data: IContentItemData) => {
         </Price>
         <Change change={data.change}>
           {data.change === "EVEN" ? (
-            <MaterialIcons className="material-symbols-outlined">
+            <MaterialIcons
+              data-testid="even-icon"
+              className="material-symbols-outlined"
+            >
               check_indeterminate_small
             </MaterialIcons>
           ) : data.change === "RISE" ? (
-            <MaterialIcons className="material-symbols-outlined">
+            <MaterialIcons
+              data-testid="rise-icon"
+              className="material-symbols-outlined"
+            >
               arrow_drop_up
             </MaterialIcons>
           ) : data.change === "FALL" ? (
-            <MaterialIcons className="material-symbols-outlined">
+            <MaterialIcons
+              data-testid="fall-icon"
+              className="material-symbols-outlined"
+            >
               arrow_drop_down
             </MaterialIcons>
           ) : (

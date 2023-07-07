@@ -1,23 +1,19 @@
-import { myPageInvestData } from "../../datalist";
+import { myPageInvestDatas } from "../../datalist";
 import {
   MypageContentContainer,
   MypageContentInner,
   CreateMyPageContentItem,
 } from "./common/commonItem";
 
-const CreateMyInvestItem = () => {
-  return (
-    <>
-      {myPageInvestData &&
-        myPageInvestData.map((data) => CreateMyPageContentItem(data))}
-    </>
-  );
-};
-
 function MypageInvest() {
   return (
     <MypageContentContainer>
-      <MypageContentInner>{CreateMyInvestItem()}</MypageContentInner>
+      <MypageContentInner>
+        {myPageInvestDatas &&
+          myPageInvestDatas.map((data, index) => (
+            <CreateMyPageContentItem data={data} index={index} />
+          ))}
+      </MypageContentInner>
     </MypageContentContainer>
   );
 }

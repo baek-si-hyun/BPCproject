@@ -6,6 +6,7 @@ import FilterName from "./common/FliterName";
 import FilterPrice from "./common/FilterPrice";
 import FilterMarketCap from "./common/FilterMarketCap";
 import FilterChange from "./common/FilterChange";
+import FilterTimer from "./common/FilterTimer";
 
 function SelectExchange() {
   return (
@@ -15,6 +16,9 @@ function SelectExchange() {
       </SelectWrapperLi>
       <SelectWrapperLi>
         <FilterCategory />
+      </SelectWrapperLi>
+      <SelectWrapperLi>
+        <FilterTimer />
       </SelectWrapperLi>
       <SelectWrapperLi>
         <FilterSubscription />

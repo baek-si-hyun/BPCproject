@@ -1,5 +1,5 @@
 {
-  "name": "visual-coin",
+  "name": "BPCproject",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -54,8 +54,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "devDependencies": {
-    "@types/d3": "^7.4.0"
   }
 }

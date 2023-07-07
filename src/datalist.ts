@@ -1,4 +1,6 @@
-export const myPageSubscribeData = [
+import { IContentItemData } from "./interface/iMyPage";
+
+export const myPageSubscribeDatas: IContentItemData[] = [
   {
     exchange: "Binance",
     coin: "Bitcion",
@@ -56,7 +58,7 @@ export const myPageSubscribeData = [
     changeRate: 12,
   },
 ];
-export const myPageInvestData = [
+export const myPageInvestDatas: IContentItemData[] = [
   {
     exchange: "Binance",
     coin: "Bitcion",
@@ -163,13 +165,13 @@ export const optionCategory = [
 ];
 export const optionExchange = [
   { value: "Binance", label: "Binance" },
-  { value: "BinanceUS", label: "BinanceUS" },
+  { value: "Coinbase", label: "Coinbase" },
+  { value: "Kraken", label: "Kraken" },
+  { value: "Bybit", label: "Bybit" },
   { value: "OKX", label: "OKX" },
   { value: "UpBit", label: "UpBit" },
   { value: "Bitget", label: "Bitget" },
   { value: "Bithumb", label: "Bithumb" },
-  { value: "Uniswap", label: "Uniswap" },
-  { value: "OKCoin", label: "OKCoin" },
 ];
 export const mapsData = [
   {

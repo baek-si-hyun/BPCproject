@@ -26,7 +26,7 @@ function CoinMap() {
               animated={false}
               label={
                 <TreeMapLabel
-                  wrap={true}
+                  wrap={false}
                   fontSize={16}
                   fontFamily={"Pretendard"}
                   placement={"start"}
@@ -34,11 +34,9 @@ function CoinMap() {
               }
               rect={
                 <TreeMapRect
-                  tooltip={<></>}
+                  fill="#000000"
                   animated={false}
-                  onMouseEnter={(event, data) => {
-                    // console.log("onMouseEnter", event, data);
-                  }}
+                  onMouseEnter={(event, data) => {}}
                   onMouseLeave={(event, data) => {
                     // console.log("onMouseLeave", event, data);
                   }}

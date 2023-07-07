@@ -25,7 +25,7 @@ const UserInformation = styled.div`
 const UserImgBox = styled.div`
   border-radius: 13px;
 `;
-const UserImg = styled.img`
+export const UserImg = styled.img`
   width: 200px;
   height: 200px;
   object-fit: cover;
@@ -64,18 +64,18 @@ const Tabs = styled.div`
   display: flex;
   gap: 1rem;
 `;
-const Tab = styled.div<{ isActive: boolean }>`
+const Tab = styled.div`
   display: flex;
 `;
-const TabLink = styled(Link)<{ isActive: boolean }>`
+export const TabLink = styled(Link)<{ isConnect: boolean }>`
   border-radius: 9px;
   padding: 1rem;
   text-transform: capitalize;
   font-weight: bold;
   box-shadow: 0 0.2rem 0.5rem rgba(0, 0, 0, 0.15);
   background-color: ${(props) =>
-    props.isActive ? props.theme.btnBgColor : props.theme.cardColor};
-  color: ${(props) => props.isActive && props.theme.btnTextColor};
+    props.isConnect ? props.theme.btnBgColor : props.theme.cardColor};
+  color: ${(props) => props.isConnect && props.theme.btnTextColor};
   will-change: background-color, color;
   &:hover {
     background-color: ${(props) => props.theme.btnHoberBgColor};
@@ -96,7 +96,7 @@ function Mypage() {
         <ProfileBox>
           <UserInformation>
             <UserImgBox>
-              <UserImg src={userData.img} />
+              <UserImg src={userData.img} alt="user-img" />
             </UserImgBox>
             <UserEmailName>
               <UserEmail>{userData.email}</UserEmail>
@@ -112,23 +112,23 @@ function Mypage() {
         </ProfileBox>
         <SelectBox>
           <Tabs>
-            <Tab isActive={investMatch !== null}>
-              <TabLink to="/my-page/my-invest" isActive={investMatch !== null}>
+            <Tab>
+              <TabLink to="/my-page/my-invest" isConnect={investMatch !== null}>
                 invest
               </TabLink>
             </Tab>
-            <Tab isActive={subscribeMatch !== null}>
+            <Tab>
               <TabLink
                 to="/my-page/my-subscribe"
-                isActive={subscribeMatch !== null}
+                isConnect={subscribeMatch !== null}
               >
                 subscribe
               </TabLink>
             </Tab>
-            <Tab isActive={settingMatch !== null}>
+            <Tab>
               <TabLink
                 to="/my-page/my-setting"
-                isActive={settingMatch !== null}
+                isConnect={settingMatch !== null}
               >
                 setting
               </TabLink>
