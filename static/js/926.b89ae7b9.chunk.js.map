@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/926.b89ae7b9.chunk.js","mappings":"iIAKE,UALF,WAEI,OAAOA,EAAAA,EAAAA,KAAAC,EAAAA,SAAA,GACT,C","sources":["pages/mypage/MypageSetting.tsx"],"sourcesContent":["function MypageSetting() {\r\n\r\n    return <></>;\r\n  }\r\n  \r\n  export default MypageSetting;"],"names":["_jsx","_Fragment"],"sourceRoot":""}

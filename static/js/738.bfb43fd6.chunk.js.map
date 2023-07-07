@@ -1,0 +1,1 @@
+{"version":3,"file":"static/js/738.bfb43fd6.chunk.js","mappings":"gIAIE,UAJF,WACI,OAAOA,EAAAA,EAAAA,KAAA,SACT,C","sources":["pages/coin_comparison/CoinComparison.tsx"],"sourcesContent":["function CoinComparison() {\r\n    return <div></div>;\r\n  }\r\n  \r\n  export default CoinComparison;\r\n  "],"names":["_jsx"],"sourceRoot":""}
