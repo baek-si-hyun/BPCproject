@@ -69,23 +69,32 @@ function Join() {
   };
   return (
     <MemberForm onSubmit={handleLogin}>
-      <MemberInputLabel>Email Address</MemberInputLabel>
+      <MemberInputLabel htmlFor="join-email-input">
+        Email Address
+      </MemberInputLabel>
       <MemberInput
+        id="join-email-input"
         type="email"
         value={email}
         onChange={handleEmailChange}
         placeholder="Email Address"
       />
-      <MemberInputLabel>Nick Name</MemberInputLabel>
+      <MemberInputLabel htmlFor="join-nickname-input">
+        Nick Name
+      </MemberInputLabel>
       <MemberInput
+        id="join-nickname-input"
         type="text"
         value={nickName}
         onChange={handleNickNameChange}
         placeholder="Nick Name"
       />
-      <MemberInputLabel>Password</MemberInputLabel>
+      <MemberInputLabel htmlFor="join-password-input">
+        Password
+      </MemberInputLabel>
       <JoinPassWordInputBox>
         <JoinPasswordInput
+          id="join-password-input"
           type={showPassword ? "text" : "password"}
           value={password}
           onChange={handlePasswordChange}
@@ -93,15 +102,28 @@ function Join() {
         />
         <VisibilityIconBtn type="button" onClick={handleTogglePassword}>
           {showPassword ? (
-            <span className="material-symbols-outlined">visibility</span>
+            <span
+              className="material-symbols-outlined"
+              data-testid="visibility-password"
+            >
+              visibility
+            </span>
           ) : (
-            <span className="material-symbols-outlined">visibility_off</span>
+            <span
+              className="material-symbols-outlined"
+              data-testid="visibility-off-password"
+            >
+              visibility_off
+            </span>
           )}
         </VisibilityIconBtn>
       </JoinPassWordInputBox>
-      <MemberInputLabel>Password Check</MemberInputLabel>
+      <MemberInputLabel htmlFor="join-passwordcheck-input">
+        Password Check
+      </MemberInputLabel>
       <JoinPassWordInputBox>
         <JoinPasswordInput
+          id="join-passwordcheck-input"
           type={showPasswordCheck ? "text" : "password"}
           value={passwordCheck}
           onChange={handlePasswordCheckChange}
@@ -109,13 +131,28 @@ function Join() {
         />
         <VisibilityIconBtn type="button" onClick={handleTogglePasswordCheck}>
           {showPasswordCheck ? (
-            <span className="material-symbols-outlined">visibility</span>
+            <span
+              className="material-symbols-outlined"
+              data-testid="visibility-password-check"
+            >
+              visibility
+            </span>
           ) : (
-            <span className="material-symbols-outlined">visibility_off</span>
+            <span
+              className="material-symbols-outlined"
+              data-testid="visibility-off-password-check"
+            >
+              visibility_off
+            </span>
           )}
         </VisibilityIconBtn>
       </JoinPassWordInputBox>
-      <MemberButton type="submit">Join Us</MemberButton>
+      <MemberButton
+        type="submit"
+        disabled={!email || !nickName || !password || !passwordCheck}
+      >
+        Join Us
+      </MemberButton>
     </MemberForm>
   );
 }

@@ -23,24 +23,24 @@ const Tabs = styled.div`
   grid-template-columns: repeat(2, 1fr);
   margin: 0 0 3rem 0;
 `;
-const ActiveBox = styled.div<{ isActive: boolean }>`
+const ActiveBox = styled.div<{ isConnect: boolean }>`
   position: absolute;
   left: 0;
   bottom: 0;
   height: 1px;
   width: 50%;
   border-bottom: 2px solid ${(props) => props.theme.memberActiveBoxBgColor};
-  transform: translateX(${(props) => (props.isActive ? "0" : "100%")});
+  transform: translateX(${(props) => (props.isConnect ? "0" : "100%")});
   transition: transform 0.2s ease-in-out;
   will-change: transform, border;
 `;
-const Tab = styled.div<{ isActive: boolean }>`
+const Tab = styled.div<{ isConnect: boolean }>`
   text-align: center;
   display: flex;
   padding: 1rem 0;
   border-bottom: 2px solid ${(props) => props.theme.memberTabBdColor};
   color: ${(props) =>
-    props.isActive ? props.theme.textColor : props.theme.memberTabTextColor};
+    props.isConnect ? props.theme.textColor : props.theme.memberTabTextColor};
   will-change: color, border;
 `;
 
@@ -63,11 +63,11 @@ function Member() {
           <Link to="/">VisualCoin</Link>
         </Logo>
         <Tabs>
-          <ActiveBox isActive={loginMatch !== null} />
-          <Tab isActive={loginMatch !== null}>
+          <ActiveBox isConnect={loginMatch !== null} />
+          <Tab isConnect={loginMatch !== null}>
             <TabLink to="/member/login">Login</TabLink>
           </Tab>
-          <Tab isActive={joinMatch !== null}>
+          <Tab isConnect={joinMatch !== null}>
             <TabLink to="/member/join">Join</TabLink>
           </Tab>
         </Tabs>

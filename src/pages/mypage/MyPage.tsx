@@ -25,7 +25,7 @@ const UserInformation = styled.div`
 const UserImgBox = styled.div`
   border-radius: 13px;
 `;
-export const UserImg = styled.img`
+const UserImg = styled.img`
   width: 200px;
   height: 200px;
   object-fit: cover;

@@ -1,5 +1,5 @@
 import { fireEvent, render, screen } from "@testing-library/react";
-import Mypage, { TabLink } from "../../pages/mypage/MyPage";
+import Mypage from "../../pages/mypage/MyPage";
 import { MemoryRouter } from "react-router-dom";
 
 describe("<Mypage />", () => {
@@ -82,12 +82,10 @@ describe("<Mypage />", () => {
     });
   });
 
-  test("TabLink가 my-invest로 이동하는지 확인한다", () => {
+  test("my-invest로 이동하는지 확인한다", () => {
     render(
       <MemoryRouter>
-        <TabLink to="/my-page/my-invest" isConnect={true}>
-          invest
-        </TabLink>
+        <Mypage />
       </MemoryRouter>
     );
 
@@ -97,12 +95,10 @@ describe("<Mypage />", () => {
     expect(linkElement.getAttribute("href")).toBe("/my-page/my-invest");
   });
 
-  test("TabLink가 my-subscribe로 이동하는지 확인한다", () => {
+  test("my-subscribe로 이동하는지 확인한다", () => {
     render(
       <MemoryRouter>
-        <TabLink to="/my-page/my-subscribe" isConnect={true}>
-          subscribe
-        </TabLink>
+        <Mypage />
       </MemoryRouter>
     );
 
@@ -112,12 +108,10 @@ describe("<Mypage />", () => {
     expect(linkElement.getAttribute("href")).toBe("/my-page/my-subscribe");
   });
 
-  test("TabLink가 my-setting로 이동하는지 확인한다", () => {
+  test("my-setting로 이동하는지 확인한다", () => {
     render(
       <MemoryRouter>
-        <TabLink to="/my-page/my-setting" isConnect={true}>
-          setting
-        </TabLink>
+        <Mypage />
       </MemoryRouter>
     );
 

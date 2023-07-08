@@ -31,21 +31,25 @@ function Login() {
 
   return (
     <MemberForm onSubmit={handleLogin}>
-      <MemberInputLabel>Email Address</MemberInputLabel>
+      <MemberInputLabel htmlFor="login-email-input">Email Address</MemberInputLabel>
       <MemberInput
+        id="login-email-input"
         type="text"
         value={email}
         onChange={handleEmailChange}
         placeholder="Email Address"
       />
-      <MemberInputLabel>Password</MemberInputLabel>
+      <MemberInputLabel htmlFor="login-password-input">Password</MemberInputLabel>
       <MemberInput
+        id="login-password-input"
         type="password"
         value={password}
         onChange={handlePasswordChange}
         placeholder="Password"
       />
-      <MemberButton type="submit">Login</MemberButton>
+      <MemberButton type="submit" disabled={!email || !password}>
+        Login
+      </MemberButton>
     </MemberForm>
   );
 }
