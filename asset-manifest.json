@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BPCproject/static/css/main.0259f4f9.css",
-    "main.js": "/BPCproject/static/js/main.34b473bd.js",
+    "main.js": "/BPCproject/static/js/main.5740341c.js",
     "static/js/399.86951b8d.chunk.js": "/BPCproject/static/js/399.86951b8d.chunk.js",
     "static/js/920.c9112981.chunk.js": "/BPCproject/static/js/920.c9112981.chunk.js",
     "static/js/389.fbf407e2.chunk.js": "/BPCproject/static/js/389.fbf407e2.chunk.js",
@@ -9,10 +9,10 @@
     "static/js/175.6fd9a8a4.chunk.js": "/BPCproject/static/js/175.6fd9a8a4.chunk.js",
     "static/js/776.710563e7.chunk.js": "/BPCproject/static/js/776.710563e7.chunk.js",
     "static/js/738.bfb43fd6.chunk.js": "/BPCproject/static/js/738.bfb43fd6.chunk.js",
-    "static/js/844.6283d903.chunk.js": "/BPCproject/static/js/844.6283d903.chunk.js",
-    "static/js/440.64f2de52.chunk.js": "/BPCproject/static/js/440.64f2de52.chunk.js",
-    "static/js/712.a4249c2a.chunk.js": "/BPCproject/static/js/712.a4249c2a.chunk.js",
-    "static/js/74.fa3f2b81.chunk.js": "/BPCproject/static/js/74.fa3f2b81.chunk.js",
+    "static/js/844.7e4d4c63.chunk.js": "/BPCproject/static/js/844.7e4d4c63.chunk.js",
+    "static/js/440.86afea3e.chunk.js": "/BPCproject/static/js/440.86afea3e.chunk.js",
+    "static/js/712.27af9aa9.chunk.js": "/BPCproject/static/js/712.27af9aa9.chunk.js",
+    "static/js/74.091296a9.chunk.js": "/BPCproject/static/js/74.091296a9.chunk.js",
     "static/js/559.bd90a834.chunk.js": "/BPCproject/static/js/559.bd90a834.chunk.js",
     "static/js/926.b89ae7b9.chunk.js": "/BPCproject/static/js/926.b89ae7b9.chunk.js",
     "static/js/43.a30bde42.chunk.js": "/BPCproject/static/js/43.a30bde42.chunk.js",
@@ -37,7 +37,7 @@
     "static/media/ApercuPro-Bold.woff2": "/BPCproject/static/media/ApercuPro-Bold.7fbfd7d508c080196fbe.woff2",
     "index.html": "/BPCproject/index.html",
     "main.0259f4f9.css.map": "/BPCproject/static/css/main.0259f4f9.css.map",
-    "main.34b473bd.js.map": "/BPCproject/static/js/main.34b473bd.js.map",
+    "main.5740341c.js.map": "/BPCproject/static/js/main.5740341c.js.map",
     "399.86951b8d.chunk.js.map": "/BPCproject/static/js/399.86951b8d.chunk.js.map",
     "920.c9112981.chunk.js.map": "/BPCproject/static/js/920.c9112981.chunk.js.map",
     "389.fbf407e2.chunk.js.map": "/BPCproject/static/js/389.fbf407e2.chunk.js.map",
@@ -45,10 +45,10 @@
     "175.6fd9a8a4.chunk.js.map": "/BPCproject/static/js/175.6fd9a8a4.chunk.js.map",
     "776.710563e7.chunk.js.map": "/BPCproject/static/js/776.710563e7.chunk.js.map",
     "738.bfb43fd6.chunk.js.map": "/BPCproject/static/js/738.bfb43fd6.chunk.js.map",
-    "844.6283d903.chunk.js.map": "/BPCproject/static/js/844.6283d903.chunk.js.map",
-    "440.64f2de52.chunk.js.map": "/BPCproject/static/js/440.64f2de52.chunk.js.map",
-    "712.a4249c2a.chunk.js.map": "/BPCproject/static/js/712.a4249c2a.chunk.js.map",
-    "74.fa3f2b81.chunk.js.map": "/BPCproject/static/js/74.fa3f2b81.chunk.js.map",
+    "844.7e4d4c63.chunk.js.map": "/BPCproject/static/js/844.7e4d4c63.chunk.js.map",
+    "440.86afea3e.chunk.js.map": "/BPCproject/static/js/440.86afea3e.chunk.js.map",
+    "712.27af9aa9.chunk.js.map": "/BPCproject/static/js/712.27af9aa9.chunk.js.map",
+    "74.091296a9.chunk.js.map": "/BPCproject/static/js/74.091296a9.chunk.js.map",
     "559.bd90a834.chunk.js.map": "/BPCproject/static/js/559.bd90a834.chunk.js.map",
     "926.b89ae7b9.chunk.js.map": "/BPCproject/static/js/926.b89ae7b9.chunk.js.map",
     "43.a30bde42.chunk.js.map": "/BPCproject/static/js/43.a30bde42.chunk.js.map",
@@ -59,6 +59,6 @@
   },
   "entrypoints": [
     "static/css/main.0259f4f9.css",
-    "static/js/main.34b473bd.js"
+    "static/js/main.5740341c.js"
   ]
 }
