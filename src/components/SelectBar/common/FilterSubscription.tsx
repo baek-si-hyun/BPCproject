@@ -9,14 +9,13 @@ function FilterSubscription() {
   };
 
   return (
-    <>
-      <FilterBtn
-        onClick={() => handleToggleSubscriptionFilter()}
-        filterNum={subscriptionListFilter}
-      >
-        <span>subscription List</span>
-      </FilterBtn>
-    </>
+    <FilterBtn
+      onClick={() => handleToggleSubscriptionFilter()}
+      value={subscriptionListFilter}
+      filterNum={subscriptionListFilter}
+    >
+      <span>subscription List</span>
+    </FilterBtn>
   );
 }
 

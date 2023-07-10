@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { renderFilterButton } from "./commonItem";
+import { RenderFilterButton } from "./commonItem";
 
 function FilterName() {
   const [nameFilter, setNameFilter] = useState(0);
@@ -7,9 +7,12 @@ function FilterName() {
     setNameFilter((choices) => (choices === 2 ? 0 : choices + 1));
   };
   return (
-    <>
-      {renderFilterButton("name", nameFilter, handleToggleNameFilter)}
-    </>
+    <RenderFilterButton
+      label="name"
+      filter={nameFilter}
+      value={nameFilter}
+      handleToggleFn={handleToggleNameFilter}
+    />
   );
 }
 

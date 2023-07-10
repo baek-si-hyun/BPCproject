@@ -10,7 +10,7 @@ const CoinExchangeInner = styled.div`
   grid-template-columns: repeat(2, 1fr);
   gap: 1rem;
 `;
-const ExchangeChartContainer = styled.div`
+export const ExchangeChartContainer = styled.div`
   background-color: ${(props) => props.theme.cardColor};
   border-radius: 12px;
   padding: 1rem;
@@ -44,7 +44,7 @@ function CoinExchange() {
       <CoinExchangeInner>
         {exchangeChartData &&
           exchangeChartData.map((item, index) => (
-            <ExchangeChartContainer>
+            <ExchangeChartContainer key={index}>
               <ExchangeChartInner>
                 <ExchangeChartHeader>
                   <ChartInformation>

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { renderFilterButton } from "./commonItem";
+import { RenderFilterButton } from "./commonItem";
 
 function FilterMarketCap() {
   const [marketcapFilter, setMarketcapFilter] = useState(0);
@@ -7,13 +7,12 @@ function FilterMarketCap() {
     setMarketcapFilter((choices) => (choices === 2 ? 0 : choices + 1));
   };
   return (
-    <>
-      {renderFilterButton(
-        "market cap",
-        marketcapFilter,
-        handleTogglemMarketcapFilter
-      )}
-    </>
+    <RenderFilterButton
+      label="market cap"
+      filter={marketcapFilter}
+      value={marketcapFilter}
+      handleToggleFn={handleTogglemMarketcapFilter}
+    />
   );
 }
 

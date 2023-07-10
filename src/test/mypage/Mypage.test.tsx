@@ -103,7 +103,6 @@ describe("<Mypage />", () => {
     );
 
     const linkElement = screen.getByRole("link", { name: "subscribe" });
-
     expect(linkElement).toBeInTheDocument();
     expect(linkElement.getAttribute("href")).toBe("/my-page/my-subscribe");
   });
@@ -119,5 +118,11 @@ describe("<Mypage />", () => {
 
     expect(linkElement).toBeInTheDocument();
     expect(linkElement.getAttribute("href")).toBe("/my-page/my-setting");
+
+
+    // fireEvent.click(linkElement);
+    // const currentURL = window.location.pathname;
+    // const expectedURL = "/my-page/my-setting";
+    // expect(currentURL).toBe(expectedURL);
   });
 });

@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { renderFilterButton } from "./commonItem";
+import { RenderFilterButton } from "./commonItem";
 
 function FilterPrice() {
   const [priceFilter, setPriceFilter] = useState(0);
@@ -7,9 +7,12 @@ function FilterPrice() {
     setPriceFilter((choices) => (choices === 2 ? 0 : choices + 1));
   };
   return (
-    <>
-      {renderFilterButton("price", priceFilter, handleTogglePriceFilter)}
-    </>
+    <RenderFilterButton
+      label="price"
+      filter={priceFilter}
+      value={priceFilter}
+      handleToggleFn={handleTogglePriceFilter}
+    />
   );
 }
 

@@ -11,7 +11,7 @@ function MypageSubscribe() {
       <MypageContentInner>
         {myPageSubscribeDatas &&
           myPageSubscribeDatas.map((data, index) => (
-            <CreateMyPageContentItem data={data} index={index} />
+            <CreateMyPageContentItem data={data} index={index} key={index} />
           ))}
       </MypageContentInner>
     </MypageContentContainer>

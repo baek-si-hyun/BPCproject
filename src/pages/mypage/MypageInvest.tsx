@@ -11,7 +11,7 @@ function MypageInvest() {
       <MypageContentInner>
         {myPageInvestDatas &&
           myPageInvestDatas.map((data, index) => (
-            <CreateMyPageContentItem data={data} index={index} />
+            <CreateMyPageContentItem data={data} index={index} key={index} />
           ))}
       </MypageContentInner>
     </MypageContentContainer>

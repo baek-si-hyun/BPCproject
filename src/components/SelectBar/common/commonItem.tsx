@@ -57,13 +57,19 @@ export const MaterialIcon = styled.span`
   vertical-align: bottom;
 `;
 
-export const renderFilterButton = (
-  label: string,
-  filter: number,
-  handleToggleFn: { (): void }
-) => {
+export const RenderFilterButton = ({
+  label,
+  filter,
+  value,
+  handleToggleFn,
+}: {
+  label: string;
+  filter: number;
+  value: number;
+  handleToggleFn: { (): void };
+}): JSX.Element => {
   return (
-    <FilterBtn onClick={() => handleToggleFn()} filterNum={filter}>
+    <FilterBtn onClick={() => handleToggleFn()} value={value} filterNum={filter}>
       <span>{label}</span>
       {filter === 1 ? (
         <MaterialIcon className="material-symbols-outlined">
