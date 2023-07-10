@@ -1,5 +1,5 @@
 {
-  "name": "BPCproject",
+  "name": "visual-coin",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -23,7 +23,7 @@
     "react-router-dom": "^6.13.0",
     "react-scripts": "5.0.1",
     "react-select": "^5.7.3",
-    "reaviz": "^14.7.4",
+    "reaviz": "^14.9.1",
     "redux": "^4.2.1",
     "styled-components": "^5.3.10",
     "typescript": "^4.9.5",
@@ -54,6 +54,5 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
-  },
-  "homepage": "https://baek-si-hyun.github.io/BPCproject"
+  }
 }

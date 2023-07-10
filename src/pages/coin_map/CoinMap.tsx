@@ -18,7 +18,6 @@ function CoinMap() {
     <CoinMapContainer>
       <CoinMapInner>
         <TreeMap
-          className="reaviz-treemap"
           width={viewWidth - 16}
           height={viewWidth * 0.7}
           data={mapsData}

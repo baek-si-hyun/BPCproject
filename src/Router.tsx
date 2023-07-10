@@ -23,25 +23,23 @@ function Router() {
     <BrowserRouter basename={process.env.PUBLIC_URL}>
       <Suspense fallback={<></>}>
         <Routes>
-          <>
-            <Route path="/" element={<Header />}>
-              <Route path="/" element={<CoinExchange />} />
-              <Route path="/coin-map" element={<CoinMap />} />
-              <Route path="/coin-map/:exchangeId" element={<MapDetail />} />
-              <Route path="/coin-detail" element={<CoinData />} />
-              <Route path="/coin-detail/:coinId" element={<DataDetail />} />
-              <Route path="/coin-comparison" element={<CoinComparison />} />
-              <Route path="/my-page" element={<Mypage />}>
-                <Route path="my-invest" element={<MypageInvest />} />
-                <Route path="my-setting" element={<MypageSetting />} />
-                <Route path="my-subscribe" element={<MypageSubscribe />} />
-              </Route>
+          <Route path="/" element={<Header />}>
+            <Route path="/" element={<CoinExchange />} />
+            <Route path="/coin-map" element={<CoinMap />} />
+            <Route path="/coin-map/:exchangeId" element={<MapDetail />} />
+            <Route path="/coin-detail" element={<CoinData />} />
+            <Route path="/coin-detail/:coinId" element={<DataDetail />} />
+            <Route path="/coin-comparison" element={<CoinComparison />} />
+            <Route path="/my-page" element={<Mypage />}>
+              <Route path="my-invest" element={<MypageInvest />} />
+              <Route path="my-setting" element={<MypageSetting />} />
+              <Route path="my-subscribe" element={<MypageSubscribe />} />
             </Route>
-            <Route path="/member" element={<Member />}>
-              <Route path="login" element={<Login />}></Route>
-              <Route path="join" element={<Join />}></Route>
-            </Route>
-          </>
+          </Route>
+          <Route path="/member" element={<Member />}>
+            <Route path="login" element={<Login />}></Route>
+            <Route path="join" element={<Join />}></Route>
+          </Route>
         </Routes>
       </Suspense>
     </BrowserRouter>
