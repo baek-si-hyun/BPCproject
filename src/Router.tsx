@@ -1,6 +1,10 @@
 import { Routes, Route, BrowserRouter } from "react-router-dom";
 import { Suspense, lazy } from "react";
-
+import Login from "./pages/member/Login";
+import Join from "./pages/member/Join";
+import MypageInvest from "./pages/mypage/MypageInvest";
+import MypageSetting from "./pages/mypage/MypageSetting";
+import MypageSubscribe from "./pages/mypage/MypageSubscribe";
 const Header = lazy(() => import("./components/header/Header"));
 const CoinExchange = lazy(() => import("./pages/coin_exchange/CoinExchange"));
 const CoinMap = lazy(() => import("./pages/coin_map/CoinMap"));
@@ -11,12 +15,7 @@ const CoinComparison = lazy(() =>
   import("./pages/coin_comparison/CoinComparison")
 );
 const Member = lazy(() => import("./pages/member/Member"));
-const Login = lazy(() => import("./pages/member/Login"));
-const Join = lazy(() => import("./pages/member/Join"));
 const Mypage = lazy(() => import("./pages/mypage/MyPage"));
-const MypageInvest = lazy(() => import("./pages/mypage/MypageInvest"));
-const MypageSetting = lazy(() => import("./pages/mypage/MypageSetting"));
-const MypageSubscribe = lazy(() => import("./pages/mypage/MypageSubscribe"));
 
 function Router() {
   return (

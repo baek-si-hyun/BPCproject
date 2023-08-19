@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import SelectBar from "../../components/selectbar/SelectBar";
-import { userData } from "../../datalist";
+import { userData } from "../../api/datalist";
 import { Link, Outlet, useMatch } from "react-router-dom";
 
 const MypageContainer = styled.div``;

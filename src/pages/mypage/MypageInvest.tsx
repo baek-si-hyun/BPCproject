@@ -1,4 +1,4 @@
-import { myPageInvestDatas } from "../../datalist";
+import { myPageInvestDatas } from "../../api/datalist";
 import {
   MypageContentContainer,
   MypageContentInner,

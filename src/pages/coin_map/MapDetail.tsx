@@ -1,5 +1,5 @@
 import { TreeMap, TreeMapSeries, TreeMapRect, TreeMapLabel } from "reaviz";
-import { mapsData } from "../../datalist";
+import { mapsData } from "../../api/datalist";
 import styled from "styled-components";
 import { useSelector } from "react-redux";
 import { useState, useEffect } from "react";

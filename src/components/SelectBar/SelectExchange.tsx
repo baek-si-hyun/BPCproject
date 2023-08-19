@@ -1,5 +1,4 @@
 import { SelectWrapperUl, SelectWrapperLi } from "./common/commonItem";
-import FilterExchange from "./common/FilterExchange";
 import FilterCategory from "./common/FilterCategory";
 import FilterSubscription from "./common/FilterSubscription";
 import FilterName from "./common/FliterName";
@@ -11,9 +10,6 @@ import FilterTimer from "./common/FilterTimer";
 function SelectExchange() {
   return (
     <SelectWrapperUl>
-      <SelectWrapperLi>
-        <FilterExchange />
-      </SelectWrapperLi>
       <SelectWrapperLi>
         <FilterCategory />
       </SelectWrapperLi>

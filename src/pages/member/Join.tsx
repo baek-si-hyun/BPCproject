@@ -1,4 +1,4 @@
-import { SetStateAction, useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import {
@@ -7,6 +7,7 @@ import {
   MemberInput,
   MemberButton,
 } from "./common/commonItem";
+import { useForm } from "react-hook-form";
 
 const JoinPasswordInput = styled(MemberInput)`
   margin-bottom: 0rem;
@@ -29,54 +30,29 @@ const VisibilityIconBtn = styled.button`
 `;
 
 function Join() {
-  const [email, setEmail] = useState("");
-  const [nickName, setNickName] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordCheck, setPasswordCheck] = useState("");
+  const { register, watch, handleSubmit } = useForm();
   const [showPassword, setShowPassword] = useState(false);
   const [showPasswordCheck, setShowPasswordCheck] = useState(false);
   const navigate = useNavigate();
 
-  const handleEmailChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setEmail(e.target.value);
-  };
-  const handleNickNameChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setNickName(e.target.value);
-  };
-  const handlePasswordChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setPassword(e.target.value);
-  };
-  const handlePasswordCheckChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setPasswordCheck(e.target.value);
-  };
   const handleTogglePassword = () => {
     setShowPassword((prevShowPassword) => !prevShowPassword);
   };
   const handleTogglePasswordCheck = () => {
     setShowPasswordCheck((prevShowPassword) => !prevShowPassword);
   };
-  const handleLogin = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+  const handleJoin = () => {
     navigate("/member/login");
   };
   return (
-    <MemberForm onSubmit={handleLogin}>
+    <MemberForm onSubmit={handleSubmit(handleJoin)}>
       <MemberInputLabel htmlFor="join-email-input">
         Email Address
       </MemberInputLabel>
       <MemberInput
         id="join-email-input"
         type="email"
-        value={email}
-        onChange={handleEmailChange}
+        {...register("email")}
         placeholder="Email Address"
       />
       <MemberInputLabel htmlFor="join-nickname-input">
@@ -85,8 +61,7 @@ function Join() {
       <MemberInput
         id="join-nickname-input"
         type="text"
-        value={nickName}
-        onChange={handleNickNameChange}
+        {...register("nickname")}
         placeholder="Nick Name"
       />
       <MemberInputLabel htmlFor="join-password-input">
@@ -96,8 +71,7 @@ function Join() {
         <JoinPasswordInput
           id="join-password-input"
           type={showPassword ? "text" : "password"}
-          value={password}
-          onChange={handlePasswordChange}
+          {...register("password")}
           placeholder="Password"
         />
         <VisibilityIconBtn type="button" onClick={handleTogglePassword}>
@@ -125,8 +99,7 @@ function Join() {
         <JoinPasswordInput
           id="join-passwordcheck-input"
           type={showPasswordCheck ? "text" : "password"}
-          value={passwordCheck}
-          onChange={handlePasswordCheckChange}
+          {...register("passwordcheck")}
           placeholder="Password Check"
         />
         <VisibilityIconBtn type="button" onClick={handleTogglePasswordCheck}>
@@ -149,7 +122,12 @@ function Join() {
       </JoinPassWordInputBox>
       <MemberButton
         type="submit"
-        disabled={!email || !nickName || !password || !passwordCheck}
+        disabled={
+          !watch("email") ||
+          !watch("password") ||
+          !watch("nickname") ||
+          !watch("passwordCheck")
+        }
       >
         Join Us
       </MemberButton>

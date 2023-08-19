@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import ExchangeCharts from "./ExchangeCharts";
-import { exchangeChartData } from "../../datalist";
+import { exchangeChartData } from "../../api/datalist";
 
 const CoinExchangeContainer = styled.div``;
 const CoinExchangeInner = styled.div`
@@ -32,6 +32,7 @@ const ExchangeName = styled.div`
 const SeletedCoin = styled.div`
   font-size: 22px;
 `;
+
 function CoinExchange() {
   return (
     <CoinExchangeContainer>

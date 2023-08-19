@@ -1,4 +1,4 @@
-import { myPageSubscribeDatas } from "../../datalist";
+import { myPageSubscribeDatas } from "../../api/datalist";
 import {
   MypageContentContainer,
   MypageContentInner,

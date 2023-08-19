@@ -1,5 +1,5 @@
-import { SetStateAction, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { useForm } from "react-hook-form";
 import {
   MemberForm,
   MemberInputLabel,
@@ -8,46 +8,37 @@ import {
 } from "./common/commonItem";
 
 function Login() {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+  const { register, watch, handleSubmit } = useForm();
   const navigate = useNavigate();
 
-  const handleEmailChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setEmail(e.target.value);
-  };
-
-  const handlePasswordChange = (e: {
-    target: { value: SetStateAction<string> };
-  }) => {
-    setPassword(e.target.value);
-  };
-
-  const handleLogin = (e: { preventDefault: () => void }) => {
-    e.preventDefault();
+  const handleLogin = () => {
     navigate("/");
   };
 
   return (
-    <MemberForm onSubmit={handleLogin}>
-      <MemberInputLabel htmlFor="login-email-input">Email Address</MemberInputLabel>
+    <MemberForm onSubmit={handleSubmit(handleLogin)}>
+      <MemberInputLabel htmlFor="login-email-input">
+        Email Address
+      </MemberInputLabel>
       <MemberInput
         id="login-email-input"
         type="text"
-        value={email}
-        onChange={handleEmailChange}
+        {...register("email")}
         placeholder="Email Address"
       />
-      <MemberInputLabel htmlFor="login-password-input">Password</MemberInputLabel>
+      <MemberInputLabel htmlFor="login-password-input">
+        Password
+      </MemberInputLabel>
       <MemberInput
         id="login-password-input"
         type="password"
-        value={password}
-        onChange={handlePasswordChange}
+        {...register("password")}
         placeholder="Password"
       />
-      <MemberButton type="submit" disabled={!email || !password}>
+      <MemberButton
+        type="submit"
+        disabled={!watch("email") || !watch("password")}
+      >
         Login
       </MemberButton>
     </MemberForm>

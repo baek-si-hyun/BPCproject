@@ -1,4 +1,4 @@
-import { optionCategory } from "../../../datalist";
+import { optionCategory } from "../../../api/datalist";
 import { Select, Option } from "./commonItem";
 
 function FilterCategory() {

@@ -1,6 +1,6 @@
 import { useQuery } from "@tanstack/react-query";
 import styled from "styled-components";
-import { fetchCoins } from "../../datalist";
+import { fetchCoins } from "../../api/datalist";
 import { ICoin } from "../../interface/iCoinList";
 import { Link } from "react-router-dom";
 

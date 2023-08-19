@@ -1,4 +1,4 @@
-import { optionTimer } from "../../../datalist";
+import { optionTimer } from "../../../api/datalist";
 import { Select, Option } from "./commonItem";
 
 function FilterTimer() {
